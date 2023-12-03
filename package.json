@@ -17,8 +17,7 @@
     "prepare": "dts build",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "vitest",
-    "semantic-release": "semantic-release"
+    "test": "vitest"
   },
   "husky": {
     "hooks": {

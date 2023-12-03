@@ -18,20 +18,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+          cache: 'yarn'
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
-
-      - name: Lint
+      - name: 📦 Download packages
+        run: yarn
+  
+      - name: 🔍 Lint
         run: yarn lint
 
-      - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+      - name: 🥊 Test
+        run: yarn test
 
-      - name: Build
+      - name: 🏗️ Build
         run: yarn build
 
-      - name: Release
+      - name: 🚀 Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
