@@ -1,7 +1,15 @@
-import { sum } from '../src/index';
+/*
+ * index.test.ts
+ * 
+ * Created by Dr. Maximillian Dornseif 2023-12-03 in fastify-for-appengine 1.0.0
+ * Copyright (c) 2023 HUDORA GmbH
+ */
 
-describe('sum', () => {
-  it('adds two numbers together', () => {
-    expect(sum(1, 1)).toEqual(2);
+import {describe, it, expect} from 'vitest';
+import { fastifyConfig } from '../src/index';
+
+describe('fastifyConfig', () => {
+  it('exists', () => {
+    expect(fastifyConfig).toBeDefined();
   });
 });

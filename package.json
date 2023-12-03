@@ -1,10 +1,10 @@
 {
-  "name": "fastify-for-appengine-1",
-  "version": "0.1.0",
+  "name": "fastify-for-appengine",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Maximillian Dornseif",
   "main": "dist/index.js",
-  "module": "dist/fastify-for-appengine-1.esm.js",
+  "module": "dist/fastify-for-appengine.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -17,7 +17,7 @@
     "prepare": "dts build",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "dts test"
+    "test": "vitest"
   },
   "husky": {
     "hooks": {
@@ -33,18 +33,30 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">=12"
   },
   "size-limit": [
     {
-      "path": "dist/fastify-for-appengine-1.cjs.production.min.js",
+      "path": "dist/fastify-for-appengine.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/fastify-for-appengine-1.esm.js",
+      "path": "dist/fastify-for-appengine.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.0",
+    "@tsconfig/recommended": "^1.0.3",
+    "dts-cli": "^2.0.3",
+    "husky": "^8.0.3",
+    "size-limit": "^11.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "nanoid": "^5.0.4"
+  }
 }

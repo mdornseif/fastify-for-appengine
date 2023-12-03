@@ -1,6 +1,65 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('dev only output');
+/*
+ * index.ts
+ * 
+ * Created by Dr. Maximillian Dornseif 2023-12-03 in fastify-for-appengine-1 0.1.0
+ * Copyright (c) 2023 Maximillian Dornseif
+ */
+
+import { nanoid } from 'nanoid'
+
+function _levelToSeverity(level: number) {
+  if (level < 30) {
+    return 'debug'
   }
-  return a + b;
-};
+
+  if (level <= 30) {
+    return 'info'
+  }
+
+  if (level <= 39) {
+    return 'notice'
+  }
+
+  if (level <= 49) {
+    return 'warning'
+  }
+
+  if (level <= 59) {
+    return 'error'
+  }
+
+  if (level <= 69) {
+    return 'critical'
+  } // fatal
+
+  if (level <= 79) {
+    return 'alert'
+  }
+
+  if (level <= 79) {
+    return 'emergency'
+  }
+
+  return 'DEFAULT'
+}
+
+const gaeFormatters = {
+  level(_label: string, nr: number) {
+    return {
+      level: nr,
+      severity: _levelToSeverity(nr).toUpperCase(),
+    }
+  },
+}
+
+export const fastifyConfig = {
+  trustProxy: true, // GAE is our proxy
+  logger: {
+    messageKey: 'message', // for AppEngine Log structure
+    formatters: gaeFormatters, // map levels to GAE severity
+  },
+  // https://cloud.google.com/appengine/docs/standard/writing-application-logs?tab=node.js#top
+  genReqId(req: any): string { // use GAE request ID if available
+    return `${req.headers['X-Appengine-Request-Log-Id'] || req.headers['X-Cloud-Trace-Context'] || nanoid()}`
+  },
+}
