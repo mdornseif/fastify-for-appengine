@@ -25,7 +25,7 @@
       "@semantic-release/github"
     ]
   },
-    "scripts": {
+  "scripts": {
     "analyze": "size-limit --why",
     "build": "dts build",
     "lint": "dts lint",
