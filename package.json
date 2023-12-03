@@ -10,7 +10,22 @@
     "dist",
     "src"
   ],
-  "scripts": {
+  "release": {
+    "branches": [
+      "main",
+      "master",
+      "next"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+    "scripts": {
     "analyze": "size-limit --why",
     "build": "dts build",
     "lint": "dts lint",
@@ -47,6 +62,12 @@
     }
   ],
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.4",
+    "@semantic-release/npm": "^11.0.1",
+    "@semantic-release/release-notes-generator": "^12.1.0",
     "@size-limit/preset-small-lib": "^11.0.0",
     "@tsconfig/recommended": "^1.0.3",
     "dts-cli": "^2.0.3",
@@ -57,7 +78,8 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
-    "nanoid": "^5.0.4"
+    "nanoid": "^5.0.4",
+    "semantic-release": "^22.0.8"
   },
   "repository": {
     "type": "git",
