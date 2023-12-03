@@ -1,5 +1,5 @@
 {
-  "name": "fastify-for-appengine",
+  "name": "@mdornseif/fastify-for-appengine",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Maximillian Dornseif",
@@ -17,7 +17,8 @@
     "prepare": "dts build",
     "size": "size-limit",
     "start": "dts watch",
-    "test": "vitest"
+    "test": "vitest",
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -58,5 +59,9 @@
   },
   "dependencies": {
     "nanoid": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdornseif/fastify-for-appengine.git"
   }
 }

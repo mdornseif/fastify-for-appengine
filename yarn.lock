@@ -1950,6 +1950,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mdornseif/fastify-for-appengine@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@mdornseif/fastify-for-appengine@workspace:."
+  dependencies:
+    "@size-limit/preset-small-lib": ^11.0.0
+    "@tsconfig/recommended": ^1.0.3
+    dts-cli: ^2.0.3
+    husky: ^8.0.3
+    nanoid: ^5.0.4
+    size-limit: ^11.0.0
+    tslib: ^2.6.2
+    typescript: ^5.3.2
+    vitest: ^0.34.6
+  languageName: unknown
+  linkType: soft
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -4789,22 +4805,6 @@ __metadata:
   checksum: 92cfec0a8dfafd9c7a15fba8f2cc29cd0b62b85f056d99ce448bbcd9f708e18ab2764bda4dd5158364f4145a7c72788538994f0d1787b956ef0d1062b0f7c24c
   languageName: node
   linkType: hard
-
-"fastify-for-appengine@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "fastify-for-appengine@workspace:."
-  dependencies:
-    "@size-limit/preset-small-lib": ^11.0.0
-    "@tsconfig/recommended": ^1.0.3
-    dts-cli: ^2.0.3
-    husky: ^8.0.3
-    nanoid: ^5.0.4
-    size-limit: ^11.0.0
-    tslib: ^2.6.2
-    typescript: ^5.3.2
-    vitest: ^0.34.6
-  languageName: unknown
-  linkType: soft
 
 "fastq@npm:^1.6.0":
   version: 1.15.0
