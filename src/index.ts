@@ -1,46 +1,46 @@
 /*
  * index.ts
- * 
+ *
  * Created by Dr. Maximillian Dornseif 2023-12-03 in fastify-for-appengine-1 0.1.0
  * Copyright (c) 2023 Maximillian Dornseif
  */
 
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 
 function _levelToSeverity(level: number) {
   if (level < 30) {
-    return 'debug'
+    return 'debug';
   }
 
   if (level <= 30) {
-    return 'info'
+    return 'info';
   }
 
   if (level <= 39) {
-    return 'notice'
+    return 'notice';
   }
 
   if (level <= 49) {
-    return 'warning'
+    return 'warning';
   }
 
   if (level <= 59) {
-    return 'error'
+    return 'error';
   }
 
   if (level <= 69) {
-    return 'critical'
+    return 'critical';
   } // fatal
 
   if (level <= 79) {
-    return 'alert'
+    return 'alert';
   }
 
   if (level <= 79) {
-    return 'emergency'
+    return 'emergency';
   }
 
-  return 'DEFAULT'
+  return 'DEFAULT';
 }
 
 const gaeFormatters = {
@@ -48,9 +48,9 @@ const gaeFormatters = {
     return {
       level: nr,
       severity: _levelToSeverity(nr).toUpperCase(),
-    }
+    };
   },
-}
+};
 
 export const fastifyConfig = {
   trustProxy: true, // GAE is our proxy
@@ -59,7 +59,12 @@ export const fastifyConfig = {
     formatters: gaeFormatters, // map levels to GAE severity
   },
   // https://cloud.google.com/appengine/docs/standard/writing-application-logs?tab=node.js#top
-  genReqId(req: any): string { // use GAE request ID if available
-    return `${req.headers['X-Appengine-Request-Log-Id'] || req.headers['X-Cloud-Trace-Context'] || nanoid()}`
+  genReqId(req: any): string {
+    // use GAE request ID if available
+    return `${
+      req.headers['X-Appengine-Request-Log-Id'] ||
+      req.headers['X-Cloud-Trace-Context'] ||
+      nanoid()
+    }`;
   },
-}
+};
