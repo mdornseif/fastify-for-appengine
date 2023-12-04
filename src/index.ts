@@ -64,7 +64,7 @@ export const fastifyConfig = {
     return `${
       req.headers['X-Appengine-Request-Log-Id'] ||
       req.headers['X-Cloud-Trace-Context'] ||
-      nanoid()
+      nanoid(13)
     }`;
   },
 };
