@@ -80,7 +80,7 @@ export function startFastify(
         10
       ),
     },
-    (err: Error | undefined, address: string) => {
+    (err: Error | null, address: string) => {
       if (err) {
         fastify.log.error(err);
         process.exit(1);
