@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/mdornseif/fastify-for-appengine/compare/v1.0.0...v1.1.0) (2023-12-04)
+
+
+### Bug Fixes
+
+* **Build:** package.json syntax ([911416d](https://github.com/mdornseif/fastify-for-appengine/commit/911416d2f349f1193d34d5b30e521c33f6f915de))
+
+
+### Features
+
+* startFastify() for default server Startup ([d0883d4](https://github.com/mdornseif/fastify-for-appengine/commit/d0883d47d018ef4ec2250bbd3a6d684be4dd2fb4))
+
 # 1.0.0 (2023-12-03)
 
 
