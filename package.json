@@ -68,6 +68,7 @@
     "@semantic-release/github": "^9.2.4",
     "@semantic-release/npm": "^11.0.1",
     "@semantic-release/release-notes-generator": "^12.1.0",
+    "semantic-release": "^22.0.8",
     "@size-limit/preset-small-lib": "^11.0.0",
     "@tsconfig/recommended": "^1.0.3",
     "dts-cli": "^2.0.3",
@@ -78,8 +79,7 @@
     "vitest": "^0.34.6"
   },
   "dependencies": {
-    "nanoid": "^5.0.4",
-    "semantic-release": "^22.0.8"
+    "nanoid": "^5.0.1"
   },
   "repository": {
     "type": "git",

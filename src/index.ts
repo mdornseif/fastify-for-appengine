@@ -68,3 +68,14 @@ export const fastifyConfig = {
     }`;
   },
 };
+
+export function startFastify(fastify: any, options: {serverName?: string, postfix?: string, defaultPort?: string} = {}) {
+  fastify.listen({ port: Number.parseInt(process.env.PORT || options.defaultPort || '4000', 10) }, (err: Error|undefined, address: string) => {
+    if (err) {
+      fastify.log.error(err)
+      process.exit(1)
+    }
+  
+    console.log(`🚀 ${options.serverName||'Server'} listening on ${address}${options.postfix||''}`)
+  })
+}
