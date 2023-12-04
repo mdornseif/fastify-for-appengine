@@ -1,6 +1,6 @@
 {
   "name": "@mdornseif/fastify-for-appengine",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "author": "Maximillian Dornseif",
   "main": "dist/index.js",

@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/mdornseif/fastify-for-appengine/compare/v1.1.0...v1.1.1) (2023-12-04)
+
+
+### Bug Fixes
+
+* Allow Library-usage via of CJS ([f187cfd](https://github.com/mdornseif/fastify-for-appengine/commit/f187cfdb630a796dbaef36d330f4266c7d1f7eb9))
+* USe shorter request IDs. ([5a6b4bd](https://github.com/mdornseif/fastify-for-appengine/commit/5a6b4bd12a6fc72f983c8c72516a8be0cfbb6402))
+
 # [1.1.0](https://github.com/mdornseif/fastify-for-appengine/compare/v1.0.0...v1.1.0) (2023-12-04)
 
 
